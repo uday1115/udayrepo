@@ -18,7 +18,10 @@ __pycache__/
 .idea/**/dynamic.xml 
 .idea/**/uiDesigner.xml 
 .idea/**/gradle.xml 
-.idea/**/libraries 
+.idea/**/libraries
+*.idea/overseas.iml
+*.idea/modules.xml
+*.idea/misc.xml
 *.iws /out/ 
 
 # Distribution / packaging
