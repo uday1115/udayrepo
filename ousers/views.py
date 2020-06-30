@@ -1,6 +1,6 @@
-from .models import User
+from .models import User,QuestionFeedback,Questions
 from rest_framework.response import Response
-from ousers.serializers import UserProfileSerializer
+from ousers.serializers import UserProfileSerializer,QuestionFeedbackSerializer,QuestionSerializer
 from rest_framework import viewsets
 from rest_framework.permissions import (AllowAny, IsAuthenticated)
 from  rest_framework.views import APIView
@@ -21,3 +21,13 @@ class UserViewSet(viewsets.ModelViewSet):
         return [permission() for permission in permission_classes]
 
 
+class QuestionFeedbackViewSet(viewsets.ModelViewSet):
+    
+    queryset = QuestionFeedback.objects.all()
+    serializer_class = QuestionFeedbackSerializer
+
+
+class QuestionViewSet(viewsets.ModelViewSet):
+    
+    queryset = Questions.objects.all()
+    serializer_class = QuestionSerializer

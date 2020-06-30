@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from ousers.views import UserViewSet
+from ousers.views import UserViewSet,QuestionViewSet,QuestionFeedbackViewSet
 
 
 
@@ -27,6 +27,8 @@ from rest_framework_simplejwt.views import (
 
 router = routers.DefaultRouter()
 router.register('users', UserViewSet)
+router.register(r'questionfeedback', QuestionFeedbackViewSet)
+router.register(r'question',QuestionViewSet)
 
 
 urlpatterns = [

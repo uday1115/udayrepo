@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from ousers.models import User
+from ousers.models import User,QuestionFeedback,Questions
 
 class UserProfileSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,3 +13,13 @@ class UserProfileSerializer(serializers.ModelSerializer):
         user.set_password(password)
         user.save()
         return user
+
+class QuestionFeedbackSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = QuestionFeedback
+        fields = ['questions','feedback']
+
+class QuestionSerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Questions
+        fields = '__all__'
